@@ -51,11 +51,12 @@ function submit(){
 	else if (current > randomNumber) {
 		removeMessages();
 		removeDial();
-		if(current != previous && Math.abs(randomNumber-current)<Math.abs(randomNumber-previous)){
+		
+		if(previous !== null && Math.abs(randomNumber-current)<Math.abs(randomNumber-previous)){
 			document.getElementById("tooHigh-warmer").style.display='block';
 			document.getElementById("right-arrow").style.display = 'inline-block';
 		}
-		else if (Math.abs(randomNumber-current)>Math.abs(randomNumber-previous)){
+		else if (previous !== null && Math.abs(randomNumber-current)>Math.abs(randomNumber-previous)){
 			document.getElementById("tooHigh-colder").style.display='block';
 			document.getElementById("cold-arrow").style.display = 'inline-block';
 		}
@@ -68,11 +69,11 @@ function submit(){
 	else if (current < randomNumber) {
 		removeMessages();
 		removeDial();
-		if(Math.abs(randomNumber-current)<Math.abs(randomNumber-previous)){
+		if(previous !== null && Math.abs(randomNumber-current)<Math.abs(randomNumber-previous)){
 			document.getElementById("tooLow-warmer").style.display='block';
 			document.getElementById("right-arrow").style.display = 'inline-block';
 		}
-		else if (Math.abs(randomNumber-current)>Math.abs(randomNumber-previous)){
+		else if (previous !== null && Math.abs(randomNumber-current)>Math.abs(randomNumber-previous)){
 			document.getElementById("tooLow-colder").style.display='block';
 			document.getElementById("cold-arrow").style.display = 'inline-block';
 		}
