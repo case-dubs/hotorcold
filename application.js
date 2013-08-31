@@ -1,6 +1,11 @@
 var randomNumber = Math.floor((Math.random()*100)+1); 
 console.log(randomNumber);
 
+$("numberField").keyup(function(event){
+    if(event.keyCode == 13){
+        $("Button").click();
+    }
+});
 
 var current = null;
 var previous = null;
