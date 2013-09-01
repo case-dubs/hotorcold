@@ -3,6 +3,7 @@
 	<head>
 		<script src="application.js"></script> 
 		<link rel="stylesheet" type="text/css" href="main.css">
+		<title>Hot or Cold?</title>
 	</head>
 	<body>
 		<div id="main-body">
@@ -31,8 +32,8 @@
 				<h2 class="output-message" id="NaN">Make sure to enter a NUMBER (not a word!) between 1 and 100</h2>
 			</div>
 			<div id="buttonArea">
-				<input type="text" class="textBox" id="numberField" onkeydown="if (event.keyCode == 13) document.getElementById('Button1').click()"/>
-           		<input type="button" id="Button1" value="Go!" onclick="submit();"/>
+				<input type="text" class="textBox" id="numberField" onfocus="focus();" onblur = "focus();" value= " " onkeydown="if (event.keyCode == 13) document.getElementById('Button1').click()"/>
+           		<input type="button" onfocus="{this.value = ''}" onblur = "{this.value = ''}" id="Button1" value="Go!" onclick="submit();"/>
 			</div>
 		</div>
 	</body>

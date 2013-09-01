@@ -3,9 +3,41 @@ console.log(randomNumber);
 
 $("numberField").keyup(function(event){
     if(event.keyCode == 13){
-        $("Button").click();
+        $("Button1").click();
     }
 });
+
+function clearThis(target){
+        $(target).val = "";
+    };
+
+//attempt to make the gauge arrow rotate 45 degrees back and forth
+
+$(function() {
+    var $gaugeArrow = $("right-arrow"), degree = 45, timer;
+    rotate();
+    function rotate() {
+        
+        $gaugeArrow.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
+        $gaugeArrow.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
+        timer = setTimeout(function() {
+            ++degree; rotate();
+        },5);
+    }
+
+    $("input").toggle(function() {
+        clearTimeout(timer);
+    }, function() {
+        rotate();
+    });
+}); 
+
+//Attempt to make the text-box clear when a user submits their answer
+
+document.getElementById("Button1").onsubmit = function () {
+    var keywords = document.getElementById("numberField");
+    keywords.value = " ";
+};
 
 var current = null;
 var previous = null;
@@ -94,4 +126,11 @@ function submit(){
 		document.getElementById("NaN").style.display='block';
 		document.getElementById("cold-arrow").style.display = 'inline-block';
 	}
+
 };	
+
+/*function focus (){
+	if (this.value !== NaN){
+		this.value = ''
+	} 
+};*/
