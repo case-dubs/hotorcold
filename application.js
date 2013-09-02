@@ -28,14 +28,6 @@ $(function() {
     });
 }); 
 
-//Attempt to make the text-box clear when a user submits their answer
-
-/*document.getElementById("Button1").onclick = function () {
-    var keywords = document.getElementById("numberField");
-    keywords.value = " ";
-};
-*/
-
 var current = null;
 var previous = null;
 
@@ -123,6 +115,10 @@ function submit(){
 		document.getElementById("NaN").style.display='block';
 		document.getElementById("cold-arrow").style.display = 'inline-block';
 	}
+
+//erase value in text entry box
+
+	document.getElementById("numberField").value= '';
 
 };	
 
