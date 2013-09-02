@@ -10,7 +10,7 @@ $("numberField").keyup(function(event){
 //attempt to make the gauge arrow rotate 45 degrees back and forth
 
 $(function() {
-    var $gaugeArrow = $("right-arrow"), degree = 45, timer;
+    var $gaugeArrow = $("#right-arrow"), degree = 45, slow;
     rotate();
     function rotate() {
         
@@ -21,11 +21,11 @@ $(function() {
         },5);
     }
 
-/*    $("input").toggle(function() {
+    $(this).toggle(function() {
         clearTimeout(timer);
     }, function() {
         rotate();
-    });*/
+    });
 }); 
 
 //Attempt to make the text-box clear when a user submits their answer
