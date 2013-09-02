@@ -7,10 +7,6 @@ $("numberField").keyup(function(event){
     }
 });
 
-function clearThis(target){
-        $(target).val = "";
-    };
-
 //attempt to make the gauge arrow rotate 45 degrees back and forth
 
 $(function() {
@@ -25,19 +21,20 @@ $(function() {
         },5);
     }
 
-    $("input").toggle(function() {
+/*    $("input").toggle(function() {
         clearTimeout(timer);
     }, function() {
         rotate();
-    });
+    });*/
 }); 
 
 //Attempt to make the text-box clear when a user submits their answer
 
-document.getElementById("Button1").onsubmit = function () {
+/*document.getElementById("Button1").onclick = function () {
     var keywords = document.getElementById("numberField");
     keywords.value = " ";
 };
+*/
 
 var current = null;
 var previous = null;
@@ -129,8 +126,3 @@ function submit(){
 
 };	
 
-/*function focus (){
-	if (this.value !== NaN){
-		this.value = ''
-	} 
-};*/
